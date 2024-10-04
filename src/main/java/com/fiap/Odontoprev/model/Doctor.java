@@ -27,7 +27,7 @@ public class Doctor extends _BaseEntity{
             joinColumns = @JoinColumn(name = "doctor_id"),
             inverseJoinColumns = @JoinColumn(name = "specialty_id")
     )
-    private Set<Speciality> specialties = new HashSet<>();
+    private Set<Speciality> specialities = new HashSet<>();
 
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Appointment> appointments = new ArrayList<>();
